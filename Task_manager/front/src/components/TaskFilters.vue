@@ -1,3 +1,5 @@
+
+
 <script setup>
 import { computed } from 'vue'
 import { PRIORITIES, STATUSES } from '../constants.js'
@@ -11,7 +13,7 @@ const props = defineProps({
 const emit = defineEmits(['update:search', 'update:priority', 'update:status', 'reset'])
 
 const hasActiveFilters = computed(
-  () => props.search !== '' || props.priority !== 'all' || props.status !== 'all'
+    () => props.search !== '' || props.priority !== 'all' || props.status !== 'all'
 )
 </script>
 
@@ -21,11 +23,11 @@ const hasActiveFilters = computed(
 
     <div class="filters">
       <input
-        type="search"
-        class="filters__input"
-        placeholder="Поиск по названию и описанию..."
-        :value="search"
-        @input="emit('update:search', $event.target.value)"
+          type="search"
+          class="filters__input"
+          placeholder="Поиск по названию и описанию..."
+          :value="search"
+          @input="emit('update:search', $event.target.value)"
       />
 
       <select class="filters__input" :value="priority" @change="emit('update:priority', $event.target.value)">
